@@ -1,4 +1,4 @@
-package StudentRegister;
+package StudentRegistration;
 
 import java.util.ArrayList;
 import java.io.BufferedReader;
@@ -61,7 +61,7 @@ class Student
 
         if ( this.registeredCourses.size() >= 3 )
         {
-            System.out.println("Maximum Courses Added!");
+            System.out.println("Max Limit Hit! Cannot add more courses..");
             return;
         }
 
@@ -75,7 +75,7 @@ class Student
 
     public void display()
     {
-        System.out.println( String.format("\t%s\t%s\t%s", this.registrationNumber, this.getAge(),  this.name ) );
+        System.out.println( String.format("%s\t\t%s\t%s", this.registrationNumber, this.getAge(),  this.name ) );
     }
 }
 
@@ -95,7 +95,7 @@ public class Main
 
             System.out.println("Enter details of student " + (i+1) + ":");
 
-            System.out.print("Regisration Number number: ");
+            System.out.print("Registration number: ");
             regNumber = reader.readLine();
 
             System.out.print("Name: ");
@@ -108,13 +108,13 @@ public class Main
 
             for (int j = 0; j < 3; j++)
             {
-                System.out.print("Course " + (j+1));
+                System.out.print("Course " + (j+1) + ": ");
                 students[i].AddCourse( reader.readLine() );
             }
 
         }
 
-        System.out.println("\n\tReg No.\tAge\tName");
+        System.out.println("\nRoll No.\t\t\tAge\tName");
         for ( int i=0; i<3; i++)
             students[i].display();
 
